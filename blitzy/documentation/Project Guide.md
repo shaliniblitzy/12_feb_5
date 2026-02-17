@@ -1,96 +1,71 @@
-# Project Guide: Node.js Express.js Tutorial Server with Test Suite
+# Project Guide — Node.js Express Tutorial Server
 
-## Executive Summary
+## 1. Executive Summary
 
-**Project Completion: 82% complete (9 hours completed out of 11 total hours)**
+**Project completion: 87.5% (7 hours completed out of 8 total hours)**
 
-This greenfield Node.js Express.js tutorial server application has been implemented from scratch with a comprehensive Jest/Supertest test suite. All 6 files specified in the Agent Action Plan were successfully created and validated. The project passed all 5 validation gates with zero issues requiring fixes.
+This greenfield Node.js Express.js tutorial project has been successfully implemented from an empty repository. All features defined in the Agent Action Plan (AAP) are fully operational: two HTTP endpoints (`GET /` and `GET /good-evening`), a comprehensive test suite with 14 passing tests, 100% code coverage, and complete project documentation.
 
-**Key Achievements:**
-- 6 files created from scratch (2 source, 1 test, 2 config, 1 docs)
-- 14/14 tests passing (100% pass rate)
-- 100% code coverage across all metrics (statements, branches, functions, lines)
-- Runtime validation confirmed: both endpoints return correct responses
-- Zero defects found during validation
+### Key Achievements
+- All 6 planned files created from scratch (package.json, jest.config.js, src/app.js, src/server.js, tests/app.test.js, README.md)
+- 14/14 tests passing with 100% code coverage across all metrics
+- Zero compilation errors, zero test failures, zero runtime errors, zero npm vulnerabilities
+- App/server separation pattern correctly implemented for Supertest testability
+- Express 5.2.1, Jest 30.2.0, and Supertest 7.2.2 — all latest stable versions
 
-**Critical Unresolved Issues:** None. All planned functionality is implemented and verified.
+### Critical Unresolved Issues
+- **None.** All AAP requirements are fully satisfied with zero issues.
 
-**Recommended Next Steps:** Human code review, add `.gitignore`, and verify production deployment readiness.
-
----
-
-## Hours Calculation
-
-**Completed Hours Breakdown:**
-
-| Component | Hours | Details |
-|-----------|-------|---------|
-| Project initialization | 1.0h | package.json, directory structure, npm install, dependency resolution |
-| Express application (src/app.js) | 1.5h | 2 route handlers, Express config, module exports, JSDoc documentation |
-| Server entry point (src/server.js) | 0.5h | App/server separation pattern, PORT configuration, startup logic |
-| Jest configuration (jest.config.js) | 1.0h | Test environment, coverage thresholds, path exclusions, verbose output |
-| Test suite (tests/app.test.js) | 3.0h | 14 tests across 5 describe blocks, happy/edge/error cases |
-| Documentation (README.md) | 1.0h | 109 lines: prerequisites, structure, endpoints, commands, tech stack |
-| Validation and verification | 1.0h | Syntax checks, test execution, runtime testing, coverage verification |
-| **Total Completed** | **9.0h** | |
-
-**Remaining Hours Breakdown:**
-
-| Task | Base Hours | After Multipliers (×1.44) |
-|------|-----------|--------------------------|
-| Add .gitignore file | 0.5h | 0.5h |
-| Human code review and acceptance testing | 1.0h | 1.0h |
-| Production deployment verification | 0.5h | 0.5h |
-| **Total Remaining** | **2.0h** | **2.0h** |
-
-> Note: Enterprise multipliers (compliance 1.15× + uncertainty 1.25× = 1.44×) produce negligible impact on sub-hour tasks and are absorbed into the rounded estimates.
-
-**Completion Formula:** 9 hours completed / (9 completed + 2 remaining) = 9/11 = **82% complete**
+### Recommended Next Steps
+- Add a `.gitignore` file to prevent accidental commits of `node_modules/` and `coverage/`
+- Conduct a human code review and merge the PR
 
 ---
 
-## Validation Results Summary
+## 2. Validation Results Summary
 
-### Gate Results
+### 2.1 Final Validator Accomplishments
+
+The Final Validator confirmed all five production-readiness gates passed without requiring any fixes:
 
 | Gate | Status | Details |
 |------|--------|---------|
-| Gate 1: Dependencies | ✅ PASS | express@5.2.1, jest@30.2.0, supertest@7.2.2 installed successfully |
-| Gate 2: Compilation/Syntax | ✅ PASS | All 4 JS files pass `node --check` syntax validation |
-| Gate 3: Tests | ✅ PASS | 14/14 tests passing (100%), 0.46s execution time |
-| Gate 4: Coverage | ✅ PASS | 100% statements, branches, functions, lines |
-| Gate 5: Runtime | ✅ PASS | Both endpoints return correct responses, 404 works |
+| Dependencies | ✅ PASS | 380 packages installed, 0 vulnerabilities |
+| Compilation (Syntax) | ✅ PASS | 4/4 files pass `node --check` |
+| Tests | ✅ PASS | 14/14 tests passed (100% pass rate) |
+| Coverage | ✅ PASS | 100% statements, branches, functions, lines |
+| Runtime | ✅ PASS | Server starts, both endpoints respond correctly |
 
-### Test Results Detail
+### 2.2 Test Results Detail
 
 ```
 PASS tests/app.test.js
   GET /
-    ✓ should return 200 status code (27 ms)
-    ✓ should return Hello world in response body (3 ms)
-    ✓ should return correct Content-Type header (3 ms)
-    ✓ should return Hello world with query parameters (3 ms)
+    ✓ should return 200 status code
+    ✓ should return Hello world in response body
+    ✓ should return correct Content-Type header
+    ✓ should return Hello world with query parameters
   GET /good-evening
-    ✓ should return 200 status code (3 ms)
-    ✓ should return Good evening in response body (3 ms)
-    ✓ should return correct Content-Type header (3 ms)
+    ✓ should return 200 status code
+    ✓ should return Good evening in response body
+    ✓ should return correct Content-Type header
   404 handling
-    ✓ should return 404 for non-existent routes (4 ms)
-    ✓ should return 404 for deeply nested non-existent routes (3 ms)
+    ✓ should return 404 for non-existent routes
+    ✓ should return 404 for deeply nested non-existent routes
   Unsupported HTTP methods
-    ✓ should return 404 or 405 for POST / (3 ms)
-    ✓ should return 404 or 405 for PUT /good-evening (2 ms)
-    ✓ should return 404 or 405 for DELETE /good-evening (3 ms)
+    ✓ should return 404 or 405 for POST /
+    ✓ should return 404 or 405 for PUT /good-evening
+    ✓ should return 404 or 405 for DELETE /good-evening
   Express app configuration
-    ✓ should export a valid Express app instance (1 ms)
-    ✓ should be a valid Node.js module (1 ms)
+    ✓ should export a valid Express app instance
+    ✓ should be a valid Node.js module
 
 Test Suites: 1 passed, 1 total
 Tests:       14 passed, 14 total
-Time:        0.46 s
+Time:        ~0.4s
 ```
 
-### Coverage Results
+### 2.3 Coverage Report
 
 ```
 ----------|---------|----------|---------|---------|-------------------
@@ -101,59 +76,123 @@ All files |     100 |      100 |     100 |     100 |
 ----------|---------|----------|---------|---------|-------------------
 ```
 
-### Fixes Applied During Validation
+Coverage thresholds (90% minimum) are exceeded in every metric. `src/server.js` is excluded from coverage thresholds by design — its `.listen()` call is not testable via Supertest without port conflicts.
 
-None required. All files were correctly implemented by prior agents.
+### 2.4 Dependency Status
+
+```
+12-feb-5@1.0.0
+├── express@5.2.1
+├── jest@30.2.0
+└── supertest@7.2.2
+
+npm audit: found 0 vulnerabilities
+```
+
+### 2.5 Runtime Validation
+
+- `node src/server.js` → "Server is running on port 3000" ✅
+- `GET http://localhost:3000/` → "Hello world" (200) ✅
+- `GET http://localhost:3000/good-evening` → "Good evening" (200) ✅
+- `GET http://localhost:3000/nonexistent` → 404 ✅
+
+### 2.6 Git Status
+
+- Branch: `blitzy-1b0f1090-9cf4-4123-8058-fa81db160820`
+- 9 commits on branch (all by Blitzy Agent)
+- All in-scope files committed — no uncommitted changes
+- Only untracked: `coverage/` and `node_modules/` (build artifacts)
+- 455 lines of source code added (excluding package-lock.json)
+
+### 2.7 Fixes Applied During Validation
+
+- **None required.** The implementation passed all validation gates on the first run without any corrections needed.
 
 ---
 
-## Visual Representation
+## 3. Completion Assessment
 
-### Project Hours Breakdown
+### 3.1 Hours Calculation
+
+**Completed Hours Breakdown (7h total):**
+
+| Category | Hours | Details |
+|----------|-------|---------|
+| Project configuration | 1.5h | package.json (0.5h), jest.config.js with coverage thresholds and exclusions (0.75h), npm install and lock file (0.25h) |
+| Source code implementation | 1.5h | src/app.js with 2 route handlers and JSDoc (1h), src/server.js entry point (0.5h) |
+| Test implementation | 2.5h | 14 test cases across 5 describe blocks (2h), test execution and verification (0.5h) |
+| Documentation | 1.0h | README.md comprehensive update with API docs, structure, and usage instructions |
+| Validation and QA | 0.5h | Syntax checking, dependency audit, runtime verification, coverage validation |
+| **Total Completed** | **7h** | |
+
+**Remaining Hours Breakdown (1h total, after enterprise multipliers):**
+
+| Task | Base Hours | After Multipliers (×1.15 ×1.25) | Rounded |
+|------|-----------|----------------------------------|---------|
+| Add .gitignore file | 0.25h | 0.36h | 0.5h |
+| Human code review and merge | 0.25h | 0.36h | 0.5h |
+| **Total Remaining** | **0.5h** | **0.72h** | **1h** |
+
+**Completion Formula:**
+
+Completed: 7h / (7h completed + 1h remaining) = 7/8 = **87.5%**
+
+### 3.2 Visual Representation
 
 ```mermaid
 pie title Project Hours Breakdown
-    "Completed Work" : 9
-    "Remaining Work" : 2
+    "Completed Work" : 7
+    "Remaining Work" : 1
 ```
 
-### Git Activity Summary
+### 3.3 AAP Requirements vs. Implementation
 
-- **Branch:** `blitzy-1b0f1090-9cf4-4123-8058-fa81db160820`
-- **Total commits:** 7 (on feature branch)
-- **Files changed:** 7 (6 created, 1 updated)
-- **Lines added:** 5,876 (455 source lines excluding package-lock.json)
-- **Lines removed:** 1
-- **Working tree:** Clean (only untracked: coverage/, node_modules/)
+| AAP Requirement | Status | Evidence |
+|----------------|--------|----------|
+| `package.json` with Express, Jest, Supertest | ✅ Complete | express@5.2.1, jest@30.2.0, supertest@7.2.2 installed |
+| `jest.config.js` with 90% coverage thresholds | ✅ Complete | 90% thresholds for lines, branches, functions, statements |
+| `src/app.js` — GET / returns "Hello world" | ✅ Complete | Route handler verified via tests and runtime |
+| `src/app.js` — GET /good-evening returns "Good evening" | ✅ Complete | Route handler verified via tests and runtime |
+| `src/app.js` — App/server separation (no .listen()) | ✅ Complete | app exported without .listen(); server.js handles binding |
+| `src/server.js` — Server entry point | ✅ Complete | Imports app, calls .listen() on configurable port |
+| `tests/app.test.js` — Happy path tests | ✅ Complete | 7 tests for GET / and GET /good-evening |
+| `tests/app.test.js` — 404 handling tests | ✅ Complete | 2 tests for undefined routes |
+| `tests/app.test.js` — HTTP method validation | ✅ Complete | 3 tests for POST, PUT, DELETE |
+| `tests/app.test.js` — App config validation | ✅ Complete | 2 tests for Express instance and module export |
+| `README.md` — Project documentation | ✅ Complete | Prerequisites, installation, endpoints, testing instructions |
+| 90%+ code coverage | ✅ Exceeded | 100% across all metrics |
+| CommonJS module format | ✅ Complete | require()/module.exports used throughout |
+| 14 total test cases | ✅ Complete | 14/14 passing |
+
+**All AAP scope items are fully implemented. Zero gaps in defined requirements.**
 
 ---
 
-## Detailed Task Table — Remaining Work
+## 4. Detailed Task Table — Remaining Work
 
-| # | Task | Description | Action Steps | Hours | Priority | Severity |
-|---|------|-------------|--------------|-------|----------|----------|
-| 1 | Add `.gitignore` file | Create a `.gitignore` to exclude `node_modules/` and `coverage/` from version control | 1. Create `.gitignore` at project root 2. Add `node_modules/` entry 3. Add `coverage/` entry 4. Commit the file | 0.5h | Low | Low |
-| 2 | Human code review and acceptance testing | Review all 6 delivered files for code quality, correctness, and adherence to project requirements | 1. Review `src/app.js` route handlers 2. Review `src/server.js` startup logic 3. Review `tests/app.test.js` test quality 4. Review `jest.config.js` thresholds 5. Verify README accuracy 6. Run `npm test` locally | 1.0h | Medium | Low |
-| 3 | Production deployment verification | Verify the server starts and responds correctly in the target deployment environment | 1. Run `npm install --production` 2. Start server with `node src/server.js` 3. Test `GET /` and `GET /good-evening` via curl 4. Verify PORT env var override works | 0.5h | Low | Low |
-| | **Total Remaining Hours** | | | **2.0h** | | |
+| # | Task | Description | Priority | Severity | Hours | Confidence |
+|---|------|-------------|----------|----------|-------|------------|
+| 1 | Add `.gitignore` file | Create `.gitignore` to exclude `node_modules/`, `coverage/`, and other build artifacts from version control. Without this, these directories could be accidentally committed. | Medium | Low | 0.5h | High |
+| 2 | Human code review and PR merge | Review all 6 source files for correctness, coding standards, and tutorial suitability. Approve and merge the pull request. | Low | Low | 0.5h | High |
+| | **Total Remaining Hours** | | | | **1h** | |
+
+**Verification: Task table total (1h) = Pie chart "Remaining Work" (1h) ✓**
 
 ---
 
-## Development Guide
+## 5. Development Guide
 
-### 1. System Prerequisites
+### 5.1 System Prerequisites
 
 | Requirement | Version | Verification Command |
-|-------------|---------|---------------------|
+|------------|---------|---------------------|
 | Node.js | v20.20.0 or later | `node -v` |
 | npm | v11.1.0 or later | `npm -v` |
-| Git | Any recent version | `git --version` |
+| Git | Any modern version | `git --version` |
 
-No additional system-level dependencies, databases, or external services are required.
+### 5.2 Environment Setup
 
-### 2. Environment Setup
-
-Clone the repository and switch to the feature branch:
+1. **Clone the repository and switch to the feature branch:**
 
 ```bash
 git clone <repository-url>
@@ -161,31 +200,35 @@ cd <repository-name>
 git checkout blitzy-1b0f1090-9cf4-4123-8058-fa81db160820
 ```
 
-No environment variables are required for development or testing. The server uses `PORT` (default: `3000`) which can optionally be overridden:
+2. **Verify Node.js version:**
 
 ```bash
-# Optional: override the default port
-export PORT=8080
+node -v
+# Expected output: v20.20.0 (or later)
 ```
 
-### 3. Dependency Installation
+No environment variables are required. The application uses a hardcoded default port of 3000, configurable via the `PORT` environment variable if needed.
 
-Install all project dependencies (production + development):
+### 5.3 Dependency Installation
+
+Install all project dependencies:
 
 ```bash
 npm install
 ```
 
-**Expected output:** Successfully installs `express@5.2.1`, `jest@30.2.0`, and `supertest@7.2.2` with their transitive dependencies.
+**Expected output:**
+```
+added 380 packages in Xs
+```
 
-**Verify installation:**
+Verify installed packages:
 
 ```bash
-npm ls
+npm ls --depth=0
 ```
 
 **Expected output:**
-
 ```
 12-feb-5@1.0.0
 ├── express@5.2.1
@@ -193,31 +236,61 @@ npm ls
 └── supertest@7.2.2
 ```
 
-### 4. Running Tests
-
-Run the full test suite (single-run, non-interactive):
+Verify zero vulnerabilities:
 
 ```bash
-npm test
+npm audit
 ```
 
-**Expected output:** 14 passing tests across 5 describe blocks.
+**Expected output:**
+```
+found 0 vulnerabilities
+```
 
-Run tests with coverage reporting:
+### 5.4 Running Tests
+
+Run the full test suite (single pass, non-interactive):
 
 ```bash
-npm run test:coverage
+CI=true npm test -- --watchAll=false --ci
 ```
 
-**Expected output:** Coverage report showing 100% across all metrics. Coverage report files are generated in the `coverage/` directory.
+**Expected output:**
+```
+PASS tests/app.test.js
+  GET /
+    ✓ should return 200 status code
+    ✓ should return Hello world in response body
+    ✓ should return correct Content-Type header
+    ✓ should return Hello world with query parameters
+  GET /good-evening
+    ✓ should return 200 status code
+    ✓ should return Good evening in response body
+    ✓ should return correct Content-Type header
+  404 handling
+    ✓ should return 404 for non-existent routes
+    ✓ should return 404 for deeply nested non-existent routes
+  Unsupported HTTP methods
+    ✓ should return 404 or 405 for POST /
+    ✓ should return 404 or 405 for PUT /good-evening
+    ✓ should return 404 or 405 for DELETE /good-evening
+  Express app configuration
+    ✓ should export a valid Express app instance
+    ✓ should be a valid Node.js module
 
-Run a specific test file:
+Test Suites: 1 passed, 1 total
+Tests:       14 passed, 14 total
+```
+
+Run tests with coverage report:
 
 ```bash
-npx jest tests/app.test.js --watchAll=false
+CI=true npm run test:coverage -- --watchAll=false --ci
 ```
 
-### 5. Starting the Application Server
+Coverage reports are generated in the `coverage/` directory.
+
+### 5.5 Starting the Application Server
 
 Start the Express server:
 
@@ -226,21 +299,26 @@ node src/server.js
 ```
 
 **Expected output:**
-
 ```
 Server is running on port 3000
 ```
 
-### 6. Verification Steps
-
-With the server running, verify each endpoint:
+To use a custom port:
 
 ```bash
-# Test GET / endpoint
+PORT=8080 node src/server.js
+```
+
+### 5.6 Verification Steps
+
+With the server running, verify each endpoint in a separate terminal:
+
+```bash
+# Test the Hello world endpoint
 curl http://localhost:3000/
 # Expected: Hello world
 
-# Test GET /good-evening endpoint
+# Test the Good evening endpoint
 curl http://localhost:3000/good-evening
 # Expected: Good evening
 
@@ -249,81 +327,89 @@ curl -s -o /dev/null -w "%{http_code}" http://localhost:3000/nonexistent
 # Expected: 404
 ```
 
-### 7. Project Structure
+### 5.7 Project Structure
 
 ```
 ├── src/
-│   ├── app.js              # Express application module (exports app instance)
-│   └── server.js           # Server entry point (calls app.listen())
+│   ├── app.js              # Express application (exports app without .listen())
+│   └── server.js           # Server entry point (imports app, calls .listen())
 ├── tests/
-│   └── app.test.js         # 14 comprehensive tests for all endpoints
-├── jest.config.js          # Jest configuration (node env, 90% thresholds)
-├── package.json            # Project manifest with dependencies and scripts
-├── package-lock.json       # Dependency lock file for reproducible installs
-└── README.md               # Complete project documentation
+│   └── app.test.js         # 14 test cases for all endpoint behavior
+├── jest.config.js          # Jest config (node env, 90% coverage thresholds)
+├── package.json            # Dependencies: express, jest, supertest
+├── package-lock.json       # Lockfile for reproducible installs
+└── README.md               # Full project documentation
 ```
 
-### 8. Troubleshooting
+### 5.8 Troubleshooting
 
-| Issue | Resolution |
-|-------|-----------|
-| `EADDRINUSE: port 3000` | Another process is using port 3000. Kill it with `lsof -ti:3000 \| xargs kill` or set a different port: `PORT=3001 node src/server.js` |
-| `npm test` enters watch mode | Ensure the test script in package.json includes `--watchAll=false`. Run with: `CI=true npm test` |
-| Module not found errors | Run `npm install` to ensure all dependencies are installed |
-
----
-
-## Risk Assessment
-
-### Technical Risks
-
-| Risk | Severity | Likelihood | Mitigation |
-|------|----------|------------|------------|
-| No `.gitignore` — `node_modules/` and `coverage/` could be committed | Low | Medium | Add `.gitignore` with standard Node.js exclusions before merging |
-| Express 5.x is relatively new; fewer community resources than v4 | Low | Low | Application is minimal; no advanced v5 features are used. Can downgrade to Express 4.21.x if issues arise |
-| No request validation or input sanitization | Low | Low | Endpoints accept no user input; they return static strings. Not a risk for current scope |
-
-### Security Risks
-
-| Risk | Severity | Likelihood | Mitigation |
-|------|----------|------------|------------|
-| No security headers (Helmet) | Low | Low | Tutorial scope; add `helmet` middleware if deploying publicly |
-| No rate limiting | Low | Low | Tutorial scope; add `express-rate-limit` if deploying publicly |
-| No CORS configuration | Low | Low | Tutorial scope; add `cors` middleware if frontend clients will access the API |
-
-### Operational Risks
-
-| Risk | Severity | Likelihood | Mitigation |
-|------|----------|------------|------------|
-| No health check endpoint | Low | Low | Tutorial scope; add `GET /health` if production monitoring is needed |
-| No structured logging | Low | Low | Console.log used; add `winston` or `pino` for production |
-| No process manager (PM2, systemd) | Low | Low | Tutorial scope; add PM2 for production process management |
-
-### Integration Risks
-
-| Risk | Severity | Likelihood | Mitigation |
-|------|----------|------------|------------|
-| No CI/CD pipeline | Low | Medium | Add GitHub Actions or similar CI workflow for automated testing on push |
-| No Docker configuration | Low | Low | Add Dockerfile if containerized deployment is needed |
-
-**Overall Risk Assessment: LOW** — This is a minimal tutorial application with no external dependencies, no database, no authentication, and no user input processing. All identified risks are low severity and relate to production hardening that is explicitly out of scope for the tutorial context.
+| Issue | Cause | Solution |
+|-------|-------|----------|
+| `EADDRINUSE: port 3000` | Port 3000 already in use | Kill the existing process: `lsof -ti:3000 \| xargs kill` or use `PORT=3001 node src/server.js` |
+| `npm test` enters watch mode | Missing `--watchAll=false` flag | Run `CI=true npm test -- --watchAll=false` |
+| `MODULE_NOT_FOUND` on require | Dependencies not installed | Run `npm install` |
+| Coverage below 90% threshold | New code added without tests | Add test cases to `tests/app.test.js` for new functionality |
 
 ---
 
-## Feature Completion Checklist
+## 6. Risk Assessment
 
-| Requirement (from Agent Action Plan) | Status | Evidence |
-|--------------------------------------|--------|----------|
-| Express.js added to project | ✅ Complete | express@5.2.1 in package.json dependencies |
-| GET / returns "Hello world" | ✅ Complete | Route handler in src/app.js; verified by 4 tests |
-| GET /good-evening returns "Good evening" | ✅ Complete | Route handler in src/app.js; verified by 3 tests |
-| App/server separation for testability | ✅ Complete | src/app.js exports app; src/server.js calls listen() |
-| Jest test framework configured | ✅ Complete | jest.config.js with node env, 90% thresholds |
-| Comprehensive test suite | ✅ Complete | 14 tests in tests/app.test.js |
-| 404 handling tested | ✅ Complete | 2 tests for non-existent routes |
-| HTTP method validation tested | ✅ Complete | 3 tests for POST/PUT/DELETE on GET-only routes |
-| 90%+ code coverage | ✅ Complete | 100% achieved on all 4 metrics |
-| README documentation | ✅ Complete | 109-line comprehensive README with all sections |
-| CommonJS module format | ✅ Complete | All files use require()/module.exports |
+### 6.1 Technical Risks
 
-**All 11 explicit requirements from the Agent Action Plan have been fulfilled.**
+| Risk | Severity | Likelihood | Mitigation |
+|------|----------|------------|------------|
+| Missing `.gitignore` leads to accidental commit of `node_modules/` | Low | Medium | Create `.gitignore` file (Task #1) |
+| Express 5.x breaking changes in future minor releases | Low | Low | `package-lock.json` pins exact versions; `^5.2.1` limits to non-breaking updates |
+
+### 6.2 Security Risks
+
+| Risk | Severity | Likelihood | Mitigation |
+|------|----------|------------|------------|
+| No security middleware (rate limiting, CORS, helmet) | Low | Low | Out of scope for tutorial; add if deploying to production |
+| No input validation on endpoints | Low | Low | Endpoints accept no parameters; responses are static strings |
+
+### 6.3 Operational Risks
+
+| Risk | Severity | Likelihood | Mitigation |
+|------|----------|------------|------------|
+| No process manager for production (PM2, systemd) | Low | Low | Out of scope for tutorial; use PM2 or Docker for production deployments |
+| No logging framework configured | Low | Low | Console.log is sufficient for tutorial; add Winston/Pino for production |
+
+### 6.4 Integration Risks
+
+| Risk | Severity | Likelihood | Mitigation |
+|------|----------|------------|------------|
+| No external service dependencies | None | N/A | Application is self-contained with zero external integrations |
+
+**Overall Risk Level: LOW** — This is a self-contained tutorial application with minimal complexity, no external dependencies, no database, and no authentication requirements. All identified risks are low severity and relate to production hardening that is explicitly out of scope per the AAP.
+
+---
+
+## 7. Repository Statistics
+
+| Metric | Value |
+|--------|-------|
+| Total commits on branch | 9 |
+| Files created/modified | 6 source files + package-lock.json |
+| Lines of code added | 455 (source) + 5,421 (lock file) |
+| Source files (`.js`) | 4 (app.js, server.js, app.test.js, jest.config.js) |
+| Configuration files | 2 (package.json, jest.config.js) |
+| Documentation files | 1 (README.md) |
+| Test files | 1 (tests/app.test.js) |
+| Test cases | 14 |
+| npm packages | 380 (3 direct: express, jest, supertest) |
+| npm vulnerabilities | 0 |
+| Test pass rate | 100% (14/14) |
+| Code coverage | 100% (statements, branches, functions, lines) |
+
+---
+
+## 8. Consistency Verification Checklist
+
+- [x] Completion percentage calculated using hours formula: 7h / (7h + 1h) = 87.5%
+- [x] Executive Summary states: "87.5% (7 hours completed out of 8 total hours)"
+- [x] Pie chart uses: "Completed Work: 7" and "Remaining Work: 1"
+- [x] Task table sums to exactly 1h (0.5h + 0.5h = 1h)
+- [x] All percentage and hour references throughout report are consistent
+- [x] No conflicting or ambiguous statements exist
+- [x] Calculation formula shown with actual numbers
