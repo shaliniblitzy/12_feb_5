@@ -44,10 +44,12 @@ npm install
 
 ## Endpoints
 
-| Method | Route           | Response Body  | Status Code | Content-Type |
-| ------ | --------------- | -------------- | ----------- | ------------ |
-| GET    | `/`             | `Hello world`  | `200`       | `text/plain` |
-| GET    | `/good-evening` | `Good evening` | `200`       | `text/plain` |
+| Method | Route           | Response Body  | Status Code | Content-Type               |
+| ------ | --------------- | -------------- | ----------- | -------------------------- |
+| GET    | `/`             | `Hello world`  | `200`       | `text/html; charset=utf-8` |
+| GET    | `/good-evening` | `Good evening` | `200`       | `text/html; charset=utf-8` |
+
+> **Note:** The response bodies are plain text, but Express's `res.send(<string>)` sets the `Content-Type` response header to `text/html; charset=utf-8` by default. The table above reflects the actual MIME type returned at runtime.
 
 ### GET /
 
