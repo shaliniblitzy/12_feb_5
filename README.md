@@ -11,11 +11,9 @@ A simple Node.js tutorial server built with [Express.js](https://expressjs.com/)
 
 ## Installation
 
-Clone the repository and install the dependencies:
+Install the dependencies from the repository root:
 
 ```bash
-git clone <repository-url>
-cd <project-directory>
 npm install
 ```
 
@@ -105,9 +103,10 @@ Coverage is enforced via the thresholds configured in `jest.config.js`. The `src
 
 ## Technology Stack
 
-| Package  | Version | Purpose                                     |
-| -------- | ------- | ------------------------------------------- |
-| Express  | 5.2.1   | Web framework for routing and HTTP handling |
-| Jest     | 30.2.0  | Testing framework with built-in coverage    |
-| Supertest| 7.2.2   | HTTP assertion library for endpoint testing |
-| Node.js  | 20.20.0 | JavaScript runtime environment              |
+| Package   | Version  | Purpose                                     |
+| --------- | -------- | ------------------------------------------- |
+| Express   | 5.2.1    | Web framework for routing and HTTP handling |
+| Jest      | 30.2.0   | Testing framework with built-in coverage    |
+| Supertest | 7.2.2    | HTTP assertion library for endpoint testing |
+| Node.js   | 20.20.0+ | JavaScript runtime environment              |
+| npm       | 11.1.0+  | Package manager and script runner           |
