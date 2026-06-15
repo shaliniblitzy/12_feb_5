@@ -7,7 +7,7 @@ A minimal Node.js HTTP service built with the [Express.js](https://expressjs.com
 - [Node.js](https://nodejs.org/) `>= 18` — Express 5 declares `engines.node >= 18`.
 - npm — bundled with Node.js.
 
-> Built and verified with Node.js v22.x and npm 11.x.
+> Built and verified with Node.js v20.20.2 and npm 10.8.2.
 
 ## Installation
 
